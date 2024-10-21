@@ -681,7 +681,9 @@ void Copter::one_hz_loop()
 #endif
 
 //自加code
-    gcs().send_text(MAV_SEVERITY_CRITICAL, "current altitude:%.1fm",copter.flightmode->get_alt_above_ground_cm()/100.0f);  //%.1f-保留1位小数的float类型
+    gcs().send_text(MAV_SEVERITY_CRITICAL, 
+            "current altitude:%.1fm",
+            copter.flightmode->get_alt_above_ground_cm()/100.0f);  //%.1f-保留1位小数的float类型
 }
 
 void Copter::init_simple_bearing()
