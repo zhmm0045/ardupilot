@@ -268,6 +268,8 @@ const AP_Scheduler::Task Copter::scheduler_tasks[] = {
 #endif
 };
 
+
+//在类Copter内声明函数，在类外定义函数
 void Copter::get_scheduler_tasks(const AP_Scheduler::Task *&tasks,
                                  uint8_t &task_count,
                                  uint32_t &log_bit)
@@ -845,4 +847,4 @@ Copter::Copter(void)
 Copter copter;
 AP_Vehicle& vehicle = copter;
 
-AP_HAL_MAIN_CALLBACKS(&copter);
+AP_HAL_MAIN_CALLBACKS(&copter); //main函数入口

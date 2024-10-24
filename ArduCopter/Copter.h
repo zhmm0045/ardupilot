@@ -178,8 +178,10 @@
 #endif
 #include "mode.h"
 
+//定义类Copter，public公共继承自类AP_Vehicle
 class Copter : public AP_Vehicle {
 public:
+//声明有元类--有元类中的所有函数，可以访问本类的所有成员。
     friend class GCS_MAVLINK_Copter;
     friend class GCS_Copter;
     friend class AP_Rally_Copter;
@@ -232,10 +234,11 @@ public:
 
     friend class PayloadPlace;
 
+//构造函数
     Copter(void);
 
 private:
-
+//类成员数据
     // key aircraft parameters passed to multiple libraries
     AP_MultiCopter aparm;
 
@@ -273,9 +276,11 @@ private:
         float terrain_offset_cm;    // filtered terrain offset (e.g. terrain's height above EKF origin)
     } rangefinder_state, rangefinder_up_state;
 
+//类成员函数
     // return rangefinder height interpolated using inertial altitude
     bool get_rangefinder_height_interpolated_cm(int32_t& ret) const;
 
+//类SurfaceTracking的相关函数，定义在surface_tracking.cpp源文件中
     class SurfaceTracking {
     public:
 

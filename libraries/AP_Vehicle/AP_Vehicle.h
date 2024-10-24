@@ -71,6 +71,7 @@
 
 class AP_DDS_Client;
 
+//派生自AP_HAL::HAL::Callbacks接口类
 class AP_Vehicle : public AP_HAL::HAL::Callbacks {
 
 public:
